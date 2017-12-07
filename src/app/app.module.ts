@@ -5,28 +5,28 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeService } from './recipes/recipe.service';
+import { MoviesComponent } from './movies/movies.component';
+import {MovieService} from './movies/movie.service';
+import { MovieListComponent } from './movies/movie-list/movie-list.component';
+import { MovieItemComponent } from './movies/movie-list/movie-item/movie-item.component';
+import { MovieStartComponent } from './movies/movie-start/movie-start.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    RecipeStartComponent,
+    MoviesComponent,
+    MovieListComponent,
+    MovieItemComponent,
+    MovieStartComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { RecipeService } from './recipes/recipe.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService, RecipeService],
+  providers: [ShoppingListService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
