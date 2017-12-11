@@ -1,8 +1,13 @@
+import { DatePlaying } from '../shared/datePlaying.model';
+
 export class Movie {
 
   private _title: string;
   private _description: string;
   private _imagePath: string;
+  private _genre: string;
+  private _datePlaying: DatePlaying[];
+  private _age: number;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);
@@ -30,6 +35,30 @@ export class Movie {
 
   public set imagePath(img: string) {
     this._imagePath = img;
+  }
+
+  public get datePlaying(): DatePlaying[] {
+    return this._datePlaying;
+  }
+
+  public set datePlaying(ing: DatePlaying[]) {
+    this._datePlaying = ing;
+  }
+
+  public get age(): number {
+    return this._age;
+  }
+
+  public set age(value: number) {
+    this._age = value;
+  }
+
+  public get genre(): string {
+    return this._genre;
+  }
+
+  public set genre(value: string) {
+    this._genre = value;
   }
 }
 

@@ -54,50 +54,50 @@ export class MovieService {
       });
   }
 
-// één recept toevoegen
-//   public addMovie(movie: Movie): Promise<Movie> {
-//     console.log('Movie toevoegen');
-//
-//     return this.http.post(this.serverUrl + '/new', movie, { headers: this.headers })
-//       .toPromise()
-//       .then(response => {
-//         console.dir(response.json());
-//         return response.json() as Movie;
-//       })
-//       .catch(error => {
-//         return this.handleError(error);
-//       });
-//   }
+// één movie toevoegen
+  public addMovie(movie: Movie): Promise<Movie> {
+    console.log('Movie toevoegen');
 
-// een recept wijzigen
-//   public updateMovie(movie: Movie): Promise<Movie> {
-//     console.log('movie wijzigen');
-//
-//     return this.http.put(this.serverUrl + '/' + movie.title + '/edit', movie, { headers: this.headers })
-//       .toPromise()
-//       .then(response => {
-//         console.dir(response.json());
-//         return response.json() as Movie;
-//       })
-//       .catch(error => {
-//         return this.handleError(error);
-//       });
-//   }
+    return this.http.post(this.serverUrl + '/new', movie, { headers: this.headers })
+      .toPromise()
+      .then(response => {
+        console.dir(response.json());
+        return response.json() as Movie;
+      })
+      .catch(error => {
+        return this.handleError(error);
+      });
+  }
 
-// één recept verwijderen
-//   public deleteMovie(title: String): Promise<Movie> {
-//     console.log('Movie verwijderen');
-//
-//     return this.http.delete(this.serverUrl + '/' + title, { headers: this.headers })
-//       .toPromise()
-//       .then(response => {
-//         console.dir(response.json());
-//         return response.json() as Movie;
-//       })
-//       .catch(error => {
-//         return this.handleError(error);
-//       });
-//   }
+// een movie wijzigen
+  public updateMovie(movie: Movie): Promise<Movie> {
+    console.log('movie wijzigen');
+
+    return this.http.put(this.serverUrl + '/' + movie.title + '/edit', movie, { headers: this.headers })
+      .toPromise()
+      .then(response => {
+        console.dir(response.json());
+        return response.json() as Movie;
+      })
+      .catch(error => {
+        return this.handleError(error);
+      });
+  }
+
+// één movie verwijderen
+  public deleteMovie(title: String): Promise<Movie> {
+    console.log('Movie verwijderen');
+
+    return this.http.delete(this.serverUrl + '/' + title, { headers: this.headers })
+      .toPromise()
+      .then(response => {
+        console.dir(response.json());
+        return response.json() as Movie;
+      })
+      .catch(error => {
+        return this.handleError(error);
+      });
+  }
 
 // // ingredienten uit recept naar boodschappenlijst plaatsen
 //   public addIngredientsToShoppingList(ingredients: Ingredient[]) {

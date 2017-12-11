@@ -1,5 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import {Movie} from '../../movie.model';
+
+import {MovieService} from '../../movie.service';
 
 @Component({
   selector: 'app-movie-item',
@@ -8,11 +11,17 @@ import {Movie} from '../../movie.model';
 })
 export class MovieItemComponent implements OnInit {
   @Input() movie: Movie;
-  @Input() index: number;
 
-  constructor() { }
+  constructor(private movieService: MovieService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.router.navigate([this.movie.title.toLowerCase()], {relativeTo: this.route});
+    this.movieService.changeMovie(this.movie);
   }
 
 }

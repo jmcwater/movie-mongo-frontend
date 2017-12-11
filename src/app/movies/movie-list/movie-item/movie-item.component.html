@@ -2,10 +2,11 @@
   style="cursor: pointer;"
   [routerLink]="[index]"
   routerLinkActive="active"
-  class="list-group-item clearfix">
+  class="list-group-item clearfix"
+  (click)="onClick()">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ movie.title }}</h4>
-    <p class="list-group-item-text">{{ movie.description }}</p>
+    <p class="list-group-item-text">{{ movie.genre }}</p>
   </div>
   <span class="pull-right">
         <img
