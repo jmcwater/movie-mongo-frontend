@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="theatreForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success" [disabled]="!theatreForm.valid">Save</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="theatre">Theatre</label>
+            <input type="text" id="theatre" formControlName="theatre" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" formControlName="city" class="form-control">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

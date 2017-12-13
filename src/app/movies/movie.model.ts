@@ -6,7 +6,7 @@ export class Movie {
   private _description: string;
   private _imagePath: string;
   private _genre: string;
-  private _datePlaying: DatePlaying[];
+  // private _datePlaying: DatePlaying[];
   private _age: number;
 
   constructor(values: Object = {}) {
@@ -37,13 +37,13 @@ export class Movie {
     this._imagePath = img;
   }
 
-  public get datePlaying(): DatePlaying[] {
-    return this._datePlaying;
-  }
-
-  public set datePlaying(ing: DatePlaying[]) {
-    this._datePlaying = ing;
-  }
+  // public get datePlaying(): DatePlaying[] {
+  //   return this._datePlaying;
+  // }
+  //
+  // public set datePlaying(ing: DatePlaying[]) {
+  //   this._datePlaying = ing;
+  // }
 
   public get age(): number {
     return this._age;

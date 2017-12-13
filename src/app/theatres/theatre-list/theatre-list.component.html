@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewTheatre()">New Theatre</button>
+  </div>
+</div>
+<hr>
+<h3>Theatres:</h3>
+<div *ngIf="theatres">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-theatre-item
+        *ngFor="let theatreEl of theatres; let i = index"
+        [theatre]="theatreEl"></app-theatre-item>
+    </div>
+  </div>
+</div>
+<div *ngIf="!theatres">
+  <p>Er zijn geen theatres gevonden.</p>
+</div>

@@ -1,0 +1,10 @@
+<a
+  style="cursor: pointer;"
+  [routerLink]="[ datePlaying.datePlaying | lowercase ]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+  (click)="onClick()">
+  <div class="pull-left">
+    <p class="list-group-item-text">{{ datePlaying.datePlaying }} {{ datePlaying.timePlaying }}</p>
+  </div>
+</a>

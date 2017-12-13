@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { Movie } from './movie.model';
+import { MoviesPlayingService } from '../movies-playing/movies-playing.service';
 
 @Injectable()
 export class MovieService {
@@ -18,7 +19,8 @@ export class MovieService {
   private serverUrl = environment.serverUrl + '/movies';
 
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,
+              private moviesPlayingService: MoviesPlayingService) { }
 
   changeMovie(movie: Movie) {
     this.movieSource.next(movie);
@@ -39,9 +41,9 @@ export class MovieService {
   }
 
 // één recept ophalen
-  public getMovie(name: String): Promise<Movie> {
+  public getMovie(title: String): Promise<Movie> {
     console.log('Specifiek recept ophalen van server');
-    let url = this.serverUrl + "/" + name.toLowerCase();
+    let url = this.serverUrl + '/' + title.toLowerCase();
 
     return this.http.get(url, { headers: this.headers })
       .toPromise()
@@ -100,9 +102,9 @@ export class MovieService {
   }
 
 // // ingredienten uit recept naar boodschappenlijst plaatsen
-//   public addIngredientsToShoppingList(ingredients: Ingredient[]) {
-//     for(let ingredient of ingredients) {
-//       this.shoppingListService.addIngredient(ingredient)
+//   public addMoviesToMoviesPlaying(moviesPlaying: DatePlaying[]) {
+//     for (let datePlaying of moviesPlaying) {
+//       this.moviesPlayingService.addDatePlaying(datePlaying);
 //     }
 //   }
 

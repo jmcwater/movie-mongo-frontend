@@ -21,7 +21,7 @@
         Manage Movie <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
+        <!--<li><a (click)="onAddToMoviePlaying()" style="cursor: pointer;">To Shopping List</a></li>-->
         <li><a style="cursor: pointer;" (click)="onEditMovie()">Edit Movie</a></li>
         <li><a style="cursor: pointer;" (click)="onDeleteMovie()">Delete Movie</a></li>
       </ul>
@@ -58,16 +58,16 @@
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12">
-    <b>Date playing:</b>
-    <p> </p>
-    <ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let datePlaying of movie.datePlaying">
-        {{ datePlaying.datePlaying }}
-      </li>
-    </ul>
-  </div>
-</div>
+<!--<div class="row">-->
+  <!--<div class="col-xs-12">-->
+    <!--<b>Date playing:</b>-->
+    <!--<p> </p>-->
+    <!--<ul class="list-group">-->
+      <!--<li-->
+        <!--class="list-group-item"-->
+        <!--*ngFor="let datePlaying of movie.datePlaying">-->
+        <!--{{ datePlaying.datePlaying }}-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->

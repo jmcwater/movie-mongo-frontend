@@ -1,0 +1,10 @@
+<a
+  style="cursor: pointer;"
+  [routerLink]="[ theatre.theatre | lowercase ]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+  (click)="onClick()">
+  <div class="pull-left">
+    <p class="list-group-item-text">{{ theatre.theatre }} {{ theatre.city }}</p>
+  </div>
+</a>

@@ -5,10 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-// import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-// import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
-// import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MoviesComponent } from './movies/movies.component';
 import {MovieService} from './movies/movie.service';
@@ -18,13 +15,22 @@ import { MovieStartComponent } from './movies/movie-start/movie-start.component'
 import { MovieAddComponent } from './movies/movie-add/movie-add.component';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
+import { MoviesPlayingComponent } from './movies-playing/movies-playing.component';
+import {MoviesPlayingService} from './movies-playing/movies-playing.service';
+import { MoviesItemComponent } from './movies-playing/movies-list/movies-item/movies-item.component';
+import { MoviesListComponent } from './movies-playing/movies-list/movies-list.component';
+import { MoviesAddComponent } from './movies-playing/movies-add/movies-add.component';
+import { MoviesDetailComponent } from './movies-playing/movies-detail/movies-detail.component';
+import { TheatresComponent } from './theatres/theatres.component';
+import { TheatreListComponent } from './theatres/theatre-list/theatre-list.component';
+import { TheatreItemComponent } from './theatres/theatre-list/theatre-item/theatre-item.component';
+import { TheatreAddComponent } from './theatres/theatre-add/theatre-add.component';
+import {TheatreService} from "./theatres/theatre.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    // ShoppingListComponent,
-    // ShoppingEditComponent,
     DropdownDirective,
     MoviesComponent,
     MovieListComponent,
@@ -33,6 +39,15 @@ import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
     MovieAddComponent,
     MovieDetailComponent,
     MovieEditComponent,
+    MoviesPlayingComponent,
+    MoviesItemComponent,
+    MoviesListComponent,
+    MoviesAddComponent,
+    MoviesDetailComponent,
+    TheatresComponent,
+    TheatreListComponent,
+    TheatreItemComponent,
+    TheatreAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +56,7 @@ import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers:  [MovieService],
+  providers:  [MovieService, MoviesPlayingService, TheatreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

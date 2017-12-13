@@ -26,8 +26,8 @@ export class MovieDetailComponent implements OnInit {
 
   }
 
-  // onAddToShoppingList() {
-  //   this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  // onAddToMoviePlaying() {
+  //   this.movieService.addMoviesToMoviesPlaying(this.movie.datePlaying);
   // }
 
   onEditMovie() {

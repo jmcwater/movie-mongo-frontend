@@ -11,7 +11,7 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movie-add.component.css']
 })
 export class MovieAddComponent implements OnInit {
-  title: string;
+  id: number;
   editMode = false;
   movieForm: FormGroup;
 
@@ -24,8 +24,8 @@ export class MovieAddComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.title = params['title'];
-          this.editMode = params['title'] != null;
+          this.id = +params['id'];
+          this.editMode = params['id'] != null;
           this.initForm();
         }
       );
@@ -34,9 +34,9 @@ export class MovieAddComponent implements OnInit {
   onSubmit() {
     const newMovie = new Movie((
         this.movieForm.value['title'],
-        this.movieForm.value['genre'],
         this.movieForm.value['description'],
         this.movieForm.value['imagePath'],
+          this.movieForm.value['genre'],
         this.movieForm.value['age']));
 
     this.movieService.addMovie(this.movieForm.value);
@@ -49,22 +49,19 @@ export class MovieAddComponent implements OnInit {
     // window.location.reload();
   }
 
-  // onAddIngredient() {
-  //   (<FormArray>this.movieForm.get('movies')).push(
-  //     new FormGroup({
-  //       'title': new FormControl(null, Validators.required),
-  //       'amount': new FormControl(null, [
-  //         Validators.required,
-  //         Validators.pattern(/^[1-9]+[0-9]*$/)
-  //       ])
-  //     })
-  //   );
-  // }
-//
-//   onDeleteIngredient(index: number) {
-//     (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
-//   }
-//
+  onAddDatePlaying() {
+    (<FormArray>this.movieForm.get('datePlaying')).push(
+      new FormGroup({
+        'datePlaying': new FormControl(null, Validators.required),
+        'timePLaying': new FormControl(null, Validators.required)
+      })
+    );
+  }
+
+  onDeleteDatePlaying(index: number) {
+    (<FormArray>this.movieForm.get('datePlaying')).removeAt(index);
+  }
+
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
@@ -81,10 +78,10 @@ export class MovieAddComponent implements OnInit {
       'imagePath': new FormControl(movieImagePath),
       'description': new FormControl(movieDescription, Validators.required),
       'age': new FormControl(minimalAge, Validators.required),
-      'genre': new FormControl(movieGenre, Validators.required)
+      'genre': new FormControl(movieGenre, Validators.required),
     });
 
-    // this.onAddIngredient();
+    // this.onAddDatePlaying();
   }
 
 }
