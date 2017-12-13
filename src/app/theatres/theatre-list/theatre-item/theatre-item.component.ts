@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./theatre-item.component.css']
 })
 export class TheatreItemComponent implements OnInit {
-  @Input() theatre: Theatre;
+  @Input() theatres: Theatre;
 
   constructor(private theatreService: TheatreService,
               private router: Router,
@@ -19,8 +19,8 @@ export class TheatreItemComponent implements OnInit {
   }
 
   onClick() {
-    this.router.navigate([this.theatre.theatre.toLowerCase()], {relativeTo: this.route});
-    this.theatreService.changeTheatre(this.theatre);
+    this.router.navigate([this.theatres.theatres.toLowerCase()], {relativeTo: this.route});
+    this.theatreService.changeTheatre(this.theatres);
   }
 
 }

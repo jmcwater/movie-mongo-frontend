@@ -27,7 +27,7 @@ export class TheatreListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.subscription.unsubscribe();
+
   }
 
 }

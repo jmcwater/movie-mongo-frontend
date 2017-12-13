@@ -26,6 +26,8 @@ import { TheatreListComponent } from './theatres/theatre-list/theatre-list.compo
 import { TheatreItemComponent } from './theatres/theatre-list/theatre-item/theatre-item.component';
 import { TheatreAddComponent } from './theatres/theatre-add/theatre-add.component';
 import {TheatreService} from './theatres/theatre.service';
+import { TheatreDetailComponent } from './theatres/theatre-detail/theatre-detail.component';
+// import { TheatreEditComponent } from './theatres/theatre-edit/theatre-edit.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import {TheatreService} from './theatres/theatre.service';
     TheatreListComponent,
     TheatreItemComponent,
     TheatreAddComponent,
+    TheatreDetailComponent,
+    // TheatreEditComponent,
   ],
   imports: [
     BrowserModule,

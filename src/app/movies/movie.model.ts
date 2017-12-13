@@ -1,4 +1,5 @@
 import { DatePlaying } from '../shared/datePlaying.model';
+import {Theatre} from '../theatres/theatre.model';
 
 export class Movie {
 
@@ -63,11 +64,11 @@ export class Movie {
   }
 
 
-  public get theatres(): string {
+  get theatres(): string {
     return this._theatres;
   }
 
-  public set theatres(value: string) {
+  set theatres(value: string) {
     this._theatres = value;
   }
 }

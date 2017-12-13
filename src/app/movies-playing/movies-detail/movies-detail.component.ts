@@ -24,10 +24,6 @@ export class MoviesDetailComponent implements OnInit {
 
   }
 
-  // onAddToShoppingList() {
-  //   this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
-  // }
-
   onEditDatePlaying() {
     this.router.navigate(['edit'], {relativeTo: this.route});
 

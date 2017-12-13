@@ -1,6 +1,6 @@
 export class Theatre {
 
-  private _theatre: String;
+  private _theatres: String;
   private _city: String;
 
 
@@ -9,12 +9,12 @@ export class Theatre {
   }
 
 
- public get theatre(): String {
-    return this._theatre;
+ public get theatres(): String {
+    return this._theatres;
   }
 
-  public set theatre(value: String) {
-    this._theatre = value;
+  public set theatres(value: String) {
+    this._theatres = value;
   }
 
   public get city(): String {

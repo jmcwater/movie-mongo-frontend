@@ -40,23 +40,7 @@ export class TheatreAddComponent implements OnInit {
     this.theatreService.getTheatres()
 
     this.router.navigate(['../'], {relativeTo: this.route});
-
-    // herladen van de page om nieuwe db entries te kunnen zien
-    // window.location.reload();
   }
-
-  // onAddTheatre() {
-  //   (<FormArray>this.movieForm.get('datePlaying')).push(
-  //     new FormGroup({
-  //       'datePlaying': new FormControl(null, Validators.required),
-  //       'timePLaying': new FormControl(null, Validators.required)
-  //     })
-  //   );
-  // }
-
-  // onDeleteDatePlaying(index: number) {
-  //   (<FormArray>this.movieForm.get('datePlaying')).removeAt(index);
-  // }
 
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
@@ -70,8 +54,6 @@ export class TheatreAddComponent implements OnInit {
       'theatre': new FormControl(theatreName, Validators.required),
       'city': new FormControl(theatreCity),
     });
-
-    // this.onAddDatePlaying();
   }
 
 }

@@ -27,16 +27,6 @@ export class MovieEditComponent implements OnInit {
 
     this.initForm();
 
-
-    // this.getIngredients();
-    // this.route.params
-    //   .subscribe(
-    //     (params: Params) => {
-    //       this.id = +params['id'];
-    //       this.editMode = params['id'] != null;
-    //       this.initForm();
-    //     }
-    //   );
   }
 
   onSubmit() {
@@ -52,27 +42,9 @@ export class MovieEditComponent implements OnInit {
     this.movieService.getMovies()
 
     this.router.navigate(['../'], {relativeTo: this.route});
-
-    // herladen van de page om nieuwe db entries te kunnen zien
-    // window.location.reload();
   }
 
-  // onAddIngredient() {
-  //   (<FormArray>this.movieForm.get('movies')).push(
-  //     new FormGroup({
-  //       'title': new FormControl(null, Validators.required),
-  //       'amount': new FormControl(null, [
-  //         Validators.required,
-  //         Validators.pattern(/^[1-9]+[0-9]*$/)
-  //       ])
-  //     })
-  //   );
-  // }
-//
-//   onDeleteIngredient(index: number) {
-//     (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
-//   }
-//
+
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
@@ -92,7 +64,6 @@ export class MovieEditComponent implements OnInit {
       'genre': new FormControl(movieGenre, Validators.required)
     });
 
-    // this.onAddIngredient();
   }
 
 }

@@ -10,7 +10,6 @@ import {MoviesPlayingService} from '../movies-playing.service';
 })
 export class MoviesListComponent implements OnInit, OnDestroy {
   datesPlaying: DatePlaying[];
-  // subscription: Subscription;
 
   constructor(private moviesPlayingService: MoviesPlayingService,
               private router: Router,
@@ -21,14 +20,6 @@ export class MoviesListComponent implements OnInit, OnDestroy {
     this.moviesPlayingService.getDatesPlaying()
       .then(moviesPlaying => this.datesPlaying = moviesPlaying)
       .catch(error => console.log(error));
-
-    // this.subscription = this.recipeService.recipesChanged
-    //   .subscribe(
-    //     (recipes: Recipe[]) => {
-    //       this.recipes = recipes;
-    //     }
-    //   );
-    // this.recipes = this.recipeService.getRecipes();
   }
 
   onNewDatePlaying() {
@@ -36,6 +27,6 @@ export class MoviesListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.subscription.unsubscribe();
+
   }
 }

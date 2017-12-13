@@ -33,8 +33,8 @@ export class MoviesAddComponent implements OnInit {
   onSubmit() {
     const newDate = new DatePlaying((
       this.moviesForm.value['datePlaying'],
-        this.moviesForm.value['timePlaying'],
-        this.moviesForm.value['movies']));
+        this.moviesForm.value['timePlaying']
+    ));
 
 
     this.moviesService.addDatePlaying(this.moviesForm.value);
@@ -43,24 +43,10 @@ export class MoviesAddComponent implements OnInit {
 
     this.router.navigate(['../'], {relativeTo: this.route});
 
-    // herladen van de page om nieuwe db entries te kunnen zien
-    // window.location.reload();
-  }
-
-  onAddMovie() {
-    (<FormArray>this.moviesForm.get('movies')).push(
-      new FormGroup({
-        'title': new FormControl(null, Validators.required),
-        'genre': new FormControl(null, Validators.required),
-        'theatres': new FormControl(null, Validators.required),
-        'timePlaying': new FormControl(null, Validators.required),
-        'imagePath': new FormControl(null, Validators.required)
-      })
-    );
   }
 
   onDeleteMovie(index: number) {
-    (<FormArray>this.moviesForm.get('movies')).removeAt(index);
+    (<FormArray>this.moviesForm.get('movie')).removeAt(index);
   }
 
   onCancel() {
@@ -70,15 +56,11 @@ export class MoviesAddComponent implements OnInit {
   private initForm() {
     let datePlayingString = '';
     let timePlayingString = '';
-    let moviesArray = new FormArray([]);
 
     this.moviesForm = new FormGroup({
       'datePlaying': new FormControl(datePlayingString, Validators.required),
       'timePlaying': new FormControl(timePlayingString),
-      'movies': moviesArray
     });
-
-    this.onAddMovie();
   }
 
 }

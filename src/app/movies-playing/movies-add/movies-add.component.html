@@ -15,48 +15,6 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12" formArrayName="movies">
-        <!-- Oorspronkelijk: <div class="row" *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index" [formGroupName]="i" -->
-        <div class="row" *ngFor="let movieCtrl of moviesForm['controls'].movies['controls']; let i = index" [formGroupName]="i"
-             style="margin-top: 10px;">
-          <!-- De volgende regel voeg je ook toe -->
-          <!-- <pre *ngIf="ingredientCtrl">{{ ingredientCtrl.value | json }}</pre> -->
-          <b>Movie:</b>
-          <div class="row">
-            <p>Title:</p>
-            <input type="text" class="form-control" formControlName="title">
-          </div>
-          <div class="row">
-            <p>Genre:</p>
-            <input type="text" class="form-control" formControlName="genre">
-          </div>
-          <div class="row">
-            <p>Theatre:</p>
-            <input type="text" class="form-control" formControlName="theatres">
-          </div>
-          <div class="row">
-            <p>Time:</p>
-            <input type="text" class="form-control" formControlName="timePlaying">
-          </div>
-          <div class="row">
-            <p>ImageUrl:</p>
-            <input type="text" class="form-control" formControlName="imagePath">
-          </div>
-          <div class="col-xs-2">
-            <button type="button" class="btn btn-danger"
-                    *ngIf="moviesForm.get('movies').length > 1"
-                    (click)="onDeleteMovie(i)">Delete</button>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-xs-12">
-            <button type="button" class="btn btn-success" (click)="onAddMovie()">Add Movie</button>
-          </div>
-        </div>
-        <br/>
-        <br/>
-      </div>
   </form>
 </div>
 </div>

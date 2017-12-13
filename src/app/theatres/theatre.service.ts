@@ -37,9 +37,9 @@ export class TheatreService {
   }
 
 // één theater ophalen
-  public getTheatre(theatre: String): Promise<Theatre> {
+  public getTheatre(theatres: String): Promise<Theatre> {
     console.log('Specifiek theater ophalen van server');
-    let url = this.serverUrl + '/' + theatre.toLowerCase();
+    let url = this.serverUrl + '/' + theatres.toLowerCase();
 
     return this.http.get(url, { headers: this.headers })
       .toPromise()
@@ -71,7 +71,7 @@ export class TheatreService {
   public updateTheatre(theatre: Theatre): Promise<Theatre> {
     console.log('Theatre wijzigen');
 
-    return this.http.put(this.serverUrl + '/' + theatre.theatre + '/edit', theatre, { headers: this.headers })
+    return this.http.put(this.serverUrl + '/' + theatre.theatres + '/edit', theatre, { headers: this.headers })
       .toPromise()
       .then(response => {
         console.dir(response.json());
@@ -97,12 +97,6 @@ export class TheatreService {
       });
   }
 
-// // ingredienten uit recept naar boodschappenlijst plaatsen
-//   public addMoviesToMoviesPlaying(moviesPlaying: DatePlaying[]) {
-//     for (let datePlaying of moviesPlaying) {
-//       this.moviesPlayingService.addDatePlaying(datePlaying);
-//     }
-//   }
 
   private handleError(error: any): Promise<any> {
     console.log('verwerk error');

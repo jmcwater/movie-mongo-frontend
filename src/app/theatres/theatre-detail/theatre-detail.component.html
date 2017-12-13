@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-5">
+    <h1>{{ theatres.theatre}}</h1>
+  </div>
+  <div class="col-xs-7" id="buttonField">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Manage Theatre <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a style="cursor: pointer;" (click)="onEditTheatre()">Edit Theatre</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteTheatre()">Delete Theatre</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <b>Theatre Name:</b>
+    <p> </p>
+  </div>
+  <div class="col-xs-12">
+    {{ theatres.theatres }}
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <b>City:</b>
+    <p> </p>
+  </div>
+  <div class="col-xs-12">
+    {{ theatres.city }}
+  </div>
+</div>
+<hr>
+

@@ -11,7 +11,9 @@ import {MoviesPlayingComponent} from './movies-playing/movies-playing.component'
 import {MoviesAddComponent} from './movies-playing/movies-add/movies-add.component';
 import {MoviesDetailComponent} from './movies-playing/movies-detail/movies-detail.component';
 import {TheatresComponent} from './theatres/theatres.component';
-import {TheatreAddComponent} from "./theatres/theatre-add/theatre-add.component";
+import {TheatreAddComponent} from './theatres/theatre-add/theatre-add.component';
+import {TheatreDetailComponent} from './theatres/theatre-detail/theatre-detail.component';
+// import {TheatreEditComponent} from './theatres/theatre-edit/theatre-edit.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/movies', pathMatch: 'full' },
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
   { path: 'theatres', component: TheatresComponent, children: [
     // { path: '', component: MovieStartComponent},
     { path: 'new', component: TheatreAddComponent},
-    // { path: ':theatre', component: TheatreDetailComponent},
+    { path: ':theatres', component: TheatreDetailComponent},
+    // { path: ':theatres/edit', component: TheatreEditComponent},
   ] },
 ];
 
