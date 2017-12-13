@@ -19,7 +19,7 @@ export class MoviesItemComponent implements OnInit {
   }
 
   onClick() {
-    this.moviesPlayingService.deleteDatePlaying(this.datePlaying.datePlaying);
-    this.router.navigate(['../'], {relativeTo: this.route});
+    this.router.navigate([this.datePlaying.datePlaying.toLowerCase()], {relativeTo: this.route});
+    this.moviesPlayingService.changeMoviePlaying(this.datePlaying);
   }
 }
