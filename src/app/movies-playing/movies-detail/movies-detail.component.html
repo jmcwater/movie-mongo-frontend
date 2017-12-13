@@ -26,9 +26,24 @@
     <p> </p>
     <ul class="list-group">
       <li
-        class="list-group-item"
-        *ngFor="let movie of datePlaying.movies">
-        {{ movie.title }} - {{ movie.genre }}
+        class="list-group-item clearfix"
+        *ngFor="let movie of datePlaying.movie">
+        <div class="pull-left">
+          <h4 class="list-group-item-heading">{{ movie.title }}</h4>
+          <p class="list-group-item-text">{{ movie.genre }}</p>
+          <b class="list-group-item-text"
+          *ngFor="let theatre of movie.theatres">
+            {{ theatre.theatre }} <br>
+            <b class="list-group-item-text">{{ datePlaying.timePlaying }}</b></b>
+
+        </div>
+        <span class="pull-right">
+        <img
+          [src]="movie.imagePath"
+          alt="{{ movie.title }}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
       </li>
     </ul>
   </div>

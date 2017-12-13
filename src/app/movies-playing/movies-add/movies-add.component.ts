@@ -51,13 +51,16 @@ export class MoviesAddComponent implements OnInit {
     (<FormArray>this.moviesForm.get('movies')).push(
       new FormGroup({
         'title': new FormControl(null, Validators.required),
-        'genre': new FormControl(null, Validators.required)
+        'genre': new FormControl(null, Validators.required),
+        'theatres': new FormControl(null, Validators.required),
+        'timePlaying': new FormControl(null, Validators.required),
+        'imagePath': new FormControl(null, Validators.required)
       })
     );
   }
 
   onDeleteMovie(index: number) {
-    (<FormArray>this.moviesForm.get('title')).removeAt(index);
+    (<FormArray>this.moviesForm.get('movies')).removeAt(index);
   }
 
   onCancel() {

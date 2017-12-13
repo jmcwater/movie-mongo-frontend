@@ -25,7 +25,7 @@ import { TheatresComponent } from './theatres/theatres.component';
 import { TheatreListComponent } from './theatres/theatre-list/theatre-list.component';
 import { TheatreItemComponent } from './theatres/theatre-list/theatre-item/theatre-item.component';
 import { TheatreAddComponent } from './theatres/theatre-add/theatre-add.component';
-import {TheatreService} from "./theatres/theatre.service";
+import {TheatreService} from './theatres/theatre.service';
 
 @NgModule({
   declarations: [

@@ -20,6 +20,8 @@ export class MoviesItemComponent implements OnInit {
 
   onClick() {
     this.router.navigate([this.datePlaying.datePlaying.toLowerCase()], {relativeTo: this.route});
+    console.log("Test");
+    console.log(this.datePlaying);
     this.moviesPlayingService.changeMoviePlaying(this.datePlaying);
   }
 }

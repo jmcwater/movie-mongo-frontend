@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {DatePlaying} from '../../shared/datePlaying.model';
 import {MoviesPlayingService} from '../movies-playing.service';
 import {ActivatedRoute, Router} from '@angular/router';
-
 @Component({
   selector: 'app-movies-detail',
   templateUrl: './movies-detail.component.html',

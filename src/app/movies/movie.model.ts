@@ -8,6 +8,7 @@ export class Movie {
   private _genre: string;
   // private _datePlaying: DatePlaying[];
   private _age: number;
+  private _theatres: string;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);
@@ -59,6 +60,15 @@ export class Movie {
 
   public set genre(value: string) {
     this._genre = value;
+  }
+
+
+  public get theatres(): string {
+    return this._theatres;
+  }
+
+  public set theatres(value: string) {
+    this._theatres = value;
   }
 }
 
