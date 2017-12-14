@@ -4,7 +4,7 @@ export class DatePlaying {
 
   private _datePlaying: String;
   private _timePlaying: String;
-  private _movies: Movie[];
+  private _movie: Movie[];
 
   constructor(values: Object = {}) {
     Object.assign(this, values);
@@ -28,11 +28,11 @@ export class DatePlaying {
   }
 
 
-  public get movies(): Movie[] {
-    return this._movies;
+  public get movie(): Movie[] {
+    return this._movie;
   }
 
-  public set movies(value: Movie[]) {
-    this._movies = value;
+  public set movie(value: Movie[]) {
+    this._movie = value;
   }
 }
