@@ -32,7 +32,7 @@ export class TheatreAddComponent implements OnInit {
 
   onSubmit() {
     const newTheatre = new Theatre((
-      this.theatreForm.value['theatre'],
+      this.theatreForm.value['theatres'],
         this.theatreForm.value['city']));
 
     this.theatreService.addTheatre(this.theatreForm.value);
@@ -51,7 +51,7 @@ export class TheatreAddComponent implements OnInit {
     let theatreCity = '';
 
     this.theatreForm = new FormGroup({
-      'theatre': new FormControl(theatreName, Validators.required),
+      'theatres': new FormControl(theatreName, Validators.required),
       'city': new FormControl(theatreCity),
     });
   }

@@ -83,10 +83,10 @@ export class TheatreService {
   }
 
 // één movie verwijderen
-  public deleteTheatre(theatre: String): Promise<Theatre> {
+  public deleteTheatre(theatres: String): Promise<Theatre> {
     console.log('Theatre verwijderen');
 
-    return this.http.delete(this.serverUrl + '/' + theatre, { headers: this.headers })
+    return this.http.delete(this.serverUrl + '/' + theatres, { headers: this.headers })
       .toPromise()
       .then(response => {
         console.dir(response.json());

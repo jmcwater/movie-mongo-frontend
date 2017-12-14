@@ -31,8 +31,7 @@ const appRoutes: Routes = [
   { path: 'theatres', component: TheatresComponent, children: [
     // { path: '', component: MovieStartComponent},
     { path: 'new', component: TheatreAddComponent},
-    { path: ':theatres', component: TheatreDetailComponent},
-    // { path: ':theatres/edit', component: TheatreEditComponent},
+    { path: ':theatres', component: TheatreDetailComponent}
   ] },
 ];
 
